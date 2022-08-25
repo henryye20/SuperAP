@@ -10,10 +10,10 @@ public class Message {
 	Arraylist<Message> childList = new Arraylist<Message>();
 	// Default Constructor
 	public Message() {
-		String auth;
-		String subj;
-		String bod;
-		int i;
+		String auth = "you";
+		String subj = "shouldn't";
+		String bod = "be able to see this";
+		int i = 0;
 	}
 	
 	// Parameterized Constructor
@@ -39,22 +39,26 @@ public class Message {
 
 	// Default function for inheritance
 	public boolean isReply(){
-		
+		if(this instanceof Reply){
+			return true;
+		}
+		return false;
 	}
 
 	// Returns the subject String
 	public String getSubject(){
-		
+		return subj;
 	} 
 
 	// Returns the ID
 	public int getId(){
-		
+		return i;
 	}
 
 	// Adds a child pointer to the parent's childList.
 	public void addChild(Message child){
-		
+		childList.add(child);
+		return;
 	}
 
 }
